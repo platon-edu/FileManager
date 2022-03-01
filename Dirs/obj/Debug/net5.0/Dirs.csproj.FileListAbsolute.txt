@@ -1,0 +1,16 @@
+C:\Users\S-01\RiderProjects\Dirs\Dirs\bin\Debug\net5.0\Dirs.exe
+C:\Users\S-01\RiderProjects\Dirs\Dirs\bin\Debug\net5.0\Dirs.deps.json
+C:\Users\S-01\RiderProjects\Dirs\Dirs\bin\Debug\net5.0\Dirs.runtimeconfig.json
+C:\Users\S-01\RiderProjects\Dirs\Dirs\bin\Debug\net5.0\Dirs.runtimeconfig.dev.json
+C:\Users\S-01\RiderProjects\Dirs\Dirs\bin\Debug\net5.0\Dirs.dll
+C:\Users\S-01\RiderProjects\Dirs\Dirs\bin\Debug\net5.0\ref\Dirs.dll
+C:\Users\S-01\RiderProjects\Dirs\Dirs\bin\Debug\net5.0\Dirs.pdb
+C:\Users\S-01\RiderProjects\Dirs\Dirs\obj\Debug\net5.0\Dirs.csproj.AssemblyReference.cache
+C:\Users\S-01\RiderProjects\Dirs\Dirs\obj\Debug\net5.0\Dirs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\S-01\RiderProjects\Dirs\Dirs\obj\Debug\net5.0\Dirs.AssemblyInfoInputs.cache
+C:\Users\S-01\RiderProjects\Dirs\Dirs\obj\Debug\net5.0\Dirs.AssemblyInfo.cs
+C:\Users\S-01\RiderProjects\Dirs\Dirs\obj\Debug\net5.0\Dirs.csproj.CoreCompileInputs.cache
+C:\Users\S-01\RiderProjects\Dirs\Dirs\obj\Debug\net5.0\Dirs.dll
+C:\Users\S-01\RiderProjects\Dirs\Dirs\obj\Debug\net5.0\ref\Dirs.dll
+C:\Users\S-01\RiderProjects\Dirs\Dirs\obj\Debug\net5.0\Dirs.pdb
+C:\Users\S-01\RiderProjects\Dirs\Dirs\obj\Debug\net5.0\Dirs.genruntimeconfig.cache
