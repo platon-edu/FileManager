@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.IO;
 
 namespace Dirs
@@ -28,24 +27,33 @@ namespace Dirs
                 if (command.StartsWith("cd"))
                 {
                     cd(argss[0]);
-                } else if (command.StartsWith("mf"))
+                }
+                else if (command.StartsWith("touch"))
                 {
-                    
+                    File.Create(Directory.GetCurrentDirectory() + '\\' + argss[0]);
+                }
+                else if (command.StartsWith("rm"))
+                {
+                    if (!Directory.Exists(Directory.GetCurrentDirectory() + '\\' + argss[0]))
+                    {
+                        Console.WriteLine("Не найдено!");
+                        continue;
+                    }
+
+                    File.Delete(Directory.GetCurrentDirectory());
                 }
 
                 Console.Clear();
             }
         }
 
-        public static void cd(string dirr)
+        private static void cd(string dirr)
         {
+            if (dirr == ".") return;
             if (dirr == "..")
             {
                 Directory.SetCurrentDirectory(string.Join('\\',
                     Directory.GetCurrentDirectory().Split('\\')[..^1]));
-            }
-            else if (dirr == ".")
-            {
             }
             else
             {
@@ -70,7 +78,6 @@ namespace Dirs
                 new string('═', Console.WindowWidth / 2 - 2) + '╗');
             var files = Directory.GetFiles(dirName);
             var dirrs = Directory.GetDirectories(dirName);
-            // foreach (var i in files) Console.WriteLine(i);
             for (int i = 0; i < Math.Max(files.Length, dirrs.Length); i++)
             {
                 PrintLine(i < dirrs.Length ? dirrs[i].Split('\\')[^1] : "",
