@@ -60,7 +60,7 @@
           },
           {
             "name": "Microsoft.NETCore.App.Host.osx-x64",
-            "version": "[5.0.15, 5.0.15]"
+            "version": "[5.0.16, 5.0.16]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
@@ -72,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/platon/.dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }

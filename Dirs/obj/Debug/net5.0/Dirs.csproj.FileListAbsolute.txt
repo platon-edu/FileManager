@@ -29,4 +29,4 @@ C:/Users/S-01/RiderProjects/Dirs/Dirs/obj/Debug/net5.0/Dirs.genruntimeconfig.cac
 /Users/platon/RiderProjects/FileManager/Dirs/obj/Debug/net5.0/ref/Dirs.dll
 /Users/platon/RiderProjects/FileManager/Dirs/obj/Debug/net5.0/Dirs.pdb
 /Users/platon/RiderProjects/FileManager/Dirs/obj/Debug/net5.0/Dirs.genruntimeconfig.cache
-/Users/platon/RiderProjects/FileManager/Dirs/bin/Debug/net5.0/ref/Dirs.dll
+/Users/platon/RiderProjects/FileManager/Dirs/obj/Debug/net5.0/refint/Dirs.dll

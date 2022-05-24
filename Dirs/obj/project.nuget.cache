@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "fEW96pIBR9I0Dt/7h/c6vfH7namwxqdQM97Lqjm2JPFS7hB7eyufW02Kiyu0mcknTm/xUecS5CejovsNyA8Ipw==",
+  "dgSpecHash": "vKo4lITh0ZfGbyNYzGxcM8lJYr8lA+5fO700ZJCruoP30RPlUpNsBL7F6JvO3fBsA5mRTWVFlufZvST5ili0mw==",
   "success": true,
   "projectFilePath": "/Users/platon/RiderProjects/FileManager/Dirs/Dirs.csproj",
   "expectedPackageFiles": [
     "/Users/platon/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
     "/Users/platon/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "/Users/platon/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.15/microsoft.netcore.app.host.osx-x64.5.0.15.nupkg.sha512"
+    "/Users/platon/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.16/microsoft.netcore.app.host.osx-x64.5.0.16.nupkg.sha512"
   ],
   "logs": []
 }
