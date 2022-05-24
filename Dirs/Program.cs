@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 
 namespace Dirs
 {
     class Program
     {
         private static string message = "";
-        private static string dir = string.Join('\\', Directory.GetCurrentDirectory().Split('\\')[..^5]);
         private static string[] argss = { };
 
         // https://docs.google.com/document/d/1I1ct-BK_XRhGlXDqZ6_ZyFCBjYIU7QBzwGwHQSUeAt0/edit
@@ -15,6 +15,7 @@ namespace Dirs
         {
             Console.Clear();
             Console.WriteLine();
+            PrintDir(Directory.GetCurrentDirectory());
             Cycle();
         }
 
@@ -22,52 +23,65 @@ namespace Dirs
         {
             while (true)
             {
-                PrintDir(dir);
+                if (message == "")
+                {
+                    Console.Clear();
+                    PrintDir(Directory.GetCurrentDirectory());
+                }
+                else
+                    Console.WriteLine(message);
+
+                Console.Write("-> ");
                 string command = Console.ReadLine();
                 argss = command.Split(' ')[1..];
                 if (command.StartsWith("cd"))
                 {
-                    cd(argss[0]);
-                } else if (command.StartsWith("mf"))
-                {
-                    
+                    if (!cd(argss[0])) continue;
                 }
-
-                Console.Clear();
+                else if (command.StartsWith("mf"))
+                {
+                    File.Create(Directory.GetCurrentDirectory() + "\\" + argss[0]);
+                }
+                else if (command.StartsWith("rm"))
+                {
+                    if (argss[0].Contains('.')) File.Delete(Directory.GetCurrentDirectory());
+                }
             }
         }
 
-        public static void cd(string dirr)
+        public static void mf(string filename)
+        {
+        }
+
+        public static bool cd(string dirr)
         {
             if (dirr == "..")
             {
                 Directory.SetCurrentDirectory(string.Join('\\',
                     Directory.GetCurrentDirectory().Split('\\')[..^1]));
+                return true;
             }
-            else if (dirr == ".")
+
+            if (dirr == ".")
+                return true;
+            string dd = Directory.GetCurrentDirectory() + "\\" + dirr;
+            if (Directory.Exists(dd))
             {
+                Directory.SetCurrentDirectory(dd);
+                message = "";
+                return true;
             }
-            else
-            {
-                string dd = Directory.GetCurrentDirectory() + dirr;
-                if (Directory.Exists(dd))
-                {
-                    Directory.SetCurrentDirectory(dd);
-                    message = "";
-                }
-                else
-                {
-                    message = "Директория не найдена";
-                }
-            }
+
+            message = "Директория не найдена";
+            return false;
         }
 
         static void PrintDir(string dirName)
         {
-            Console.Write("╔═══" + dirName);
-            Console.WriteLine(
-                new string('═', Console.WindowWidth / 2 - 5 - dirName.Length) + '╦' +
-                new string('═', Console.WindowWidth / 2 - 2) + '╗');
+            Console.WriteLine("╔" + new string('═', dirName.Length + 2) + "╗");
+            Console.WriteLine("║ " + dirName + " ║");
+            Console.WriteLine('╠' + new string('═', Console.WindowWidth / 2 - 2) + '╦' +
+                              new string('═', Console.WindowWidth / 2 - 2) + '╗');
             var files = Directory.GetFiles(dirName);
             var dirrs = Directory.GetDirectories(dirName);
             // foreach (var i in files) Console.WriteLine(i);
@@ -80,7 +94,6 @@ namespace Dirs
             Console.WriteLine('╚' + new string('═', Console.WindowWidth / 2 - 2) + '╩' +
                               new string('═', Console.WindowWidth / 2 - 2) + '╝');
             if (message != "") Console.WriteLine(message);
-            Console.Write("-> ");
         }
 
         static void PrintLine(string d, string f)
