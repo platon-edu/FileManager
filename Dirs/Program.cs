@@ -41,6 +41,7 @@ namespace Dirs
                     Console.WriteLine("Пока...");
                     break;
                 }
+
                 if (argss[0] == "cd") message = Cd(argss[1]);
                 else if (argss[0] == "touch") message = Touch(argss[1]);
                 else if (argss[0] == "md") message = MakeDir(argss[1]);
@@ -74,10 +75,9 @@ namespace Dirs
         private static string RemoveFile(string fileName)
         {
             if (!File.Exists(fileName)) return "Такого файла нет";
-            Directory.Delete(fileName);
+            File.Delete(fileName);
             return "";
         }
-
 
         private static string Cd(string dirr)
         {
