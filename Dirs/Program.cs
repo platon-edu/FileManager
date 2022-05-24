@@ -81,23 +81,9 @@ namespace Dirs
 
         private static string Cd(string dirr)
         {
-            if (dirr == "..")
-            {
-                Directory.SetCurrentDirectory(string.Join(separator,
-                    Directory.GetCurrentDirectory().Split(separator)[..^1]));
-                return "";
-            }
-
-            if (dirr == ".")
-                return "";
-            string dd = Directory.GetCurrentDirectory() + separator + dirr;
-            if (Directory.Exists(dd))
-            {
-                Directory.SetCurrentDirectory(dd);
-                return "";
-            }
-
-            return "Директория не найдена";
+            if (!Directory.Exists(dirr)) return "Директория не найдена";
+            Directory.SetCurrentDirectory(dirr);
+            return "";
         }
 
         private static void PrintDir(string dirName)
