@@ -30,50 +30,48 @@ namespace Dirs
                 }
                 else
                     Console.WriteLine(message);
-
                 Console.Write("-> ");
                 string command = Console.ReadLine();
-                argss = command.Split(' ')[1..];
-                if (command.StartsWith("cd"))
+                argss = command.Split(' ');
+                if (argss[0] == "cd")
                 {
-                    if (!cd(argss[0])) continue;
+                    message = cd(argss[1]);
                 }
-                else if (command.StartsWith("mf"))
+                else if (argss[0] == "touch")
+                    message = touch(argss[1]);
+                else if (argss[0] == "removef")
                 {
-                    File.Create(Directory.GetCurrentDirectory() + "\\" + argss[0]);
+                    if (argss[1].Contains('.')) File.Delete(Directory.GetCurrentDirectory());
                 }
-                else if (command.StartsWith("rm"))
-                {
-                    if (argss[0].Contains('.')) File.Delete(Directory.GetCurrentDirectory());
-                }
+                else message = "Команда не найдена";
             }
         }
 
-        public static void mf(string filename)
+        public static string touch(string filename)
         {
+            if (File.Exists(Directory.GetCurrentDirectory() + "\\" + filename)) return "Файл уже существует";
+            File.Create(Directory.GetCurrentDirectory() + "\\" + filename);
+            return "";
         }
 
-        public static bool cd(string dirr)
+        public static string cd(string dirr)
         {
             if (dirr == "..")
             {
                 Directory.SetCurrentDirectory(string.Join('\\',
                     Directory.GetCurrentDirectory().Split('\\')[..^1]));
-                return true;
+                return "";
             }
 
             if (dirr == ".")
-                return true;
+                return "";
             string dd = Directory.GetCurrentDirectory() + "\\" + dirr;
             if (Directory.Exists(dd))
             {
                 Directory.SetCurrentDirectory(dd);
-                message = "";
-                return true;
+                return "";
             }
-
-            message = "Директория не найдена";
-            return false;
+            return "Директория не найдена";
         }
 
         static void PrintDir(string dirName)
